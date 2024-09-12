@@ -1,7 +1,3 @@
-let firstNnumber;
-let anotherNumber;
-let op = "";
-
 function add(firstInput, secondInput) {
   firstInput = document.getElementById("firstNumber").value;
   secondInput = document.getElementById("secondNumber").value;
@@ -31,38 +27,30 @@ function divide(firstInput, secondInput) {
   alert(result);
   return result;
 }
-function clear(a, b) {
-  let firstInput = document.getElementById("firstNumber").value;
-  let secondInput = document.getElementById("secondNumber").value;
-  input1 = "";
-  input2 = "";
-  alert(input1);
-  console.log(input1);
-  alert(input2);
-  console.log(input2);
-  return input1 & input2;
-}
-// function operate(a, b, operator) {
-//   const operations = {
-//     "+": add,
-//     "-": subtract,
-//     "*": multiply,
-//     "/": divide,
-//   };
-//   return operations[operator](a, b);
-// }
 
-function equals(result) {
-  let returnAddResult = add(result);
-  console.log(`equals:${returnAddResult}`);
-  document.getElementById("displayResult").value = returnAddResult;
+function equals() {
+  let resultAdd = add();
+  console.log("equals_Test");
+  console.log(`Add function:`,add());
+  let output = document.getElementById("displayResult");
+   output.innerHTML = resultAdd;
 }
 
-// function setColor(btn, color) {
-//   document.body.style.background = "#FFFFFF";
-// }
 function changeColor(element, color) {
   element.style.backgroundColor = color;
-  // document.getElementById("Add").style.backgroundColor = "red";
-  console.log("test")
+  console.log("changeColortest");
+}
+
+function clearColor() {
+  document.getElementById("Add").style.background = "#00008b";
+  document.getElementById("Subtract").style.background = "#00008b";
+  document.getElementById("Multiply").style.background = "#00008b";
+  document.getElementById("Divide").style.background = "#00008b";
+  document.getElementById("Equals").style.background = "#00008b";
+  console.log("clearColorTest");
+}
+function clear() {
+  document.getElementById("firstNumber").value = "";
+  document.getElementById("secondNumber").value = "";
+  document.getElementById("displayResult").value = "";
 }

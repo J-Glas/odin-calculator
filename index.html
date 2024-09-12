@@ -13,9 +13,9 @@
     <button id="Multiply" value="*" onclick="multiply(); changeColor(this, 'red');">*</button>
     <button id="Divide" value="/" onclick="divide(); changeColor(this, 'red');">/</button>
     <input id="secondNumber" type="number" value="" />
-    <button id="Equals" value="=" onclick="equals(); changeColor(this, 'green');">=</button>
-    <input id="displayResult" type="number" value="" onclick=""/>
-    <button id="Clear" type="button" value="clear" onclick="clear();">clear</button>
+    <button id="Equals" value="=" onclick="equals(); changeColor(this, 'green'); clearColor();">=</button>
+    <input id="displayResult" type="number"  value="" onclick=""/>
+    <button id="Clear" type="button" value="clear" onclick="clear(); clearColor();">clear</button>
     <script src="scripts.js"></script>
   </body>
 </html>
