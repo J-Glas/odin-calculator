@@ -37,7 +37,7 @@ function equals() {
       result = divide(firstInput, secondInput);
       break;
     default:
-      result = "Keine Operation ausgewählt";
+      result = "You haven't choosen a operation";
   }
   document.getElementById("displayResult").value = result;
 }
