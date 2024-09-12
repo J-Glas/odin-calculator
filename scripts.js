@@ -28,13 +28,15 @@ function divide(a, b) {
   return result;
 }
 function clear(a, b) {
-  let input = document.getElementById("displayNumber").value;
-  input = "";
-  a = "";
-  b = "";
-  alert(input);
-  console.log(input);
-  return input;
+  let input1 = document.getElementById("firstNumber").value;
+  let input2 = document.getElementById("secondNumber").value;
+  input1 = "";
+  input2 = "";
+  alert(input1);
+  console.log(input1);  
+  alert(input2);
+  console.log(input2);
+  return input1 & input2;
 }
 function operate(a, b, operator) {
   const operations = {
