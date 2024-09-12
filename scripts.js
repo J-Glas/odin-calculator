@@ -5,33 +5,30 @@ let op = "";
 function add(firstInput, secondInput) {
   firstInput = document.getElementById("firstNumber").value;
   secondInput = document.getElementById("secondNumber").value;
-  // parseFloat(firstInput);
-  // parseFloat(secondInput);
   let result = parseFloat(firstInput) + parseFloat(secondInput);
-  alert(result);
   console.log(result);
-  console.log(firstInput);
-  console.log(secondInput);
   return result;
 }
-function subtract(a, b) {
-  let input = document.getElementById("displayNumber").value;
-  alert(input);
-  return a - b;
+function subtract(firstInput, secondInput) {
+  firstInput = document.getElementById("firstNumber").value;
+  secondInput = document.getElementById("secondNumber").value;
+  let result = parseFloat(firstInput) - parseFloat(secondInput);
+  return result;
 }
-function multiply(a, b) {
-  let input = document.getElementById("displayNumber").value;
-  alert(input);
-  return a * b;
+function multiply(firstInput, secondInput) {
+  firstInput = document.getElementById("firstNumber").value;
+  secondInput = document.getElementById("secondNumber").value;
+  let result = parseFloat(firstInput) * parseFloat(secondInput);
+  return result;
 }
-
-function divide(a, b) {
-  let input = document.getElementById("displayNumber").value;
-  alert(input);
-  let result = a / b;
-  if (b === 0) {
-    return "You can't divide by 0!";
+function divide(firstInput, secondInput) {
+  firstInput = document.getElementById("firstNumber").value;
+  secondInput = document.getElementById("secondNumber").value;
+  let result = parseFloat(firstInput) / parseFloat(secondInput);
+  if (parseFloat(secondInput) === 0) {
+    result = "You can't divide by 0!";
   }
+  alert(result);
   return result;
 }
 function clear(a, b) {
@@ -45,12 +42,27 @@ function clear(a, b) {
   console.log(input2);
   return input1 & input2;
 }
-function operate(a, b, operator) {
-  const operations = {
-    "+": add,
-    "-": subtract,
-    "*": multiply,
-    "/": divide,
-  };
-  return operations[operator](a, b);
+// function operate(a, b, operator) {
+//   const operations = {
+//     "+": add,
+//     "-": subtract,
+//     "*": multiply,
+//     "/": divide,
+//   };
+//   return operations[operator](a, b);
+// }
+
+function equals(result) {
+  let returnAddResult = add(result);
+  console.log(`equals:${returnAddResult}`);
+  document.getElementById("displayResult").value = returnAddResult;
+}
+
+// function setColor(btn, color) {
+//   document.body.style.background = "#FFFFFF";
+// }
+function changeColor(element, color) {
+  element.style.backgroundColor = color;
+  // document.getElementById("Add").style.backgroundColor = "red";
+  console.log("test")
 }

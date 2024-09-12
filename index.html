@@ -8,14 +8,14 @@
   </head>
   <body>
     <input id="firstNumber" type="number" value="" />
+    <button id="Add" value="+" onclick="add(); changeColor(this, 'red');";>+</button>
+    <button id="Subtract" value="-" onclick="subtract(); changeColor(this, 'red');">-</button>
+    <button id="Multiply" value="*" onclick="multiply(); changeColor(this, 'red');">*</button>
+    <button id="Divide" value="/" onclick="divide(); changeColor(this, 'red');">/</button>
     <input id="secondNumber" type="number" value="" />
-    <input id="Add" type="button" value="+" onclick="add();" />
-    <input id="Multiply" type="button" value="*" onclick="multiply();" />
-    <input id="Subtract" type="button" value="-" onclick="subtract();" />
-    <input id="Divide" type="button" value="/" onclick="divide();" />
-
-    <input id="Clear" type="button" value="clear" onclick="clear();" />
-    <input id="Equals" type="button" value="=" onclick="equals();" />
+    <button id="Equals" value="=" onclick="equals(); changeColor(this, 'green');">=</button>
+    <input id="displayResult" type="number" value="" onclick=""/>
+    <button id="Clear" type="button" value="clear" onclick="clear();">clear</button>
     <script src="scripts.js"></script>
   </body>
 </html>
