@@ -7,15 +7,67 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <input id="firstNumber" type="number" value="" />
-    <button id="Add" value="+" onclick="add(); changeColor(this, 'red');";>+</button>
-    <button id="Subtract" value="-" onclick="subtract(); changeColor(this, 'red');">-</button>
-    <button id="Multiply" value="*" onclick="multiply(); changeColor(this, 'red');">*</button>
-    <button id="Divide" value="/" onclick="divide(); changeColor(this, 'red');">/</button>
-    <input id="secondNumber" type="number" value="" />
-    <button id="Equals" value="=" onclick="equals(); changeColor(this, 'green'); clearColor();">=</button>
-    <input id="displayResult" type="number"  value="" onclick=""/>
-    <button id="Clear" type="button" value="clear" onclick="clear(); clearColor();">clear</button>
+    <div id="computer">
+      <h1>calculator</h1>
+      <input
+        id="firstNumber"
+        type="number"
+        placeholder="first Number"
+        value=""
+      />
+      <button id="Add" value="+" onclick="add(); changeColor(this, 'red');" ;>
+        +
+      </button>
+      <button
+        id="Subtract"
+        value="-"
+        onclick="subtract(); changeColor(this, 'red');"
+      >
+        -
+      </button>
+      <button
+        id="Multiply"
+        value="*"
+        onclick="multiply(); changeColor(this, 'red');"
+      >
+        *
+      </button>
+      <button
+        id="Divide"
+        value="/"
+        onclick="divide(); changeColor(this, 'red');"
+      >
+        /
+      </button>
+      <input
+        id="secondNumber"
+        type="number"
+        placeholder="second Number"
+        value=""
+      />
+      <button
+        id="Equals"
+        value="="
+        onclick="equals(); changeColor(this, 'green'); clearColor();"
+      >
+        =
+      </button>
+      <input
+        id="displayResult"
+        type="number"
+        placeholder="Result"
+        value=""
+        onclick=""
+      />
+      <button
+        id="Clear"
+        type="button"
+        value="clear"
+        onclick="clear(); clearColor();"
+      >
+        clear
+      </button>
+    </div>
     <script src="scripts.js"></script>
   </body>
 </html>

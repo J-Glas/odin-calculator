@@ -1,44 +1,48 @@
+let currentOperation = null;
+let firstInput = null;
+
 function add(firstInput, secondInput) {
-  firstInput = document.getElementById("firstNumber").value;
-  secondInput = document.getElementById("secondNumber").value;
-  let result = parseFloat(firstInput) + parseFloat(secondInput);
-  console.log(result);
-  return result;
+  return parseFloat(firstInput) + parseFloat(secondInput);
 }
+
 function subtract(firstInput, secondInput) {
-  firstInput = document.getElementById("firstNumber").value;
-  secondInput = document.getElementById("secondNumber").value;
-  let result = parseFloat(firstInput) - parseFloat(secondInput);
-  return result;
+  return parseFloat(firstInput) - parseFloat(secondInput);
 }
+
 function multiply(firstInput, secondInput) {
-  firstInput = document.getElementById("firstNumber").value;
-  secondInput = document.getElementById("secondNumber").value;
-  let result = parseFloat(firstInput) * parseFloat(secondInput);
-  return result;
+  return parseFloat(firstInput) * parseFloat(secondInput);
 }
+
 function divide(firstInput, secondInput) {
-  firstInput = document.getElementById("firstNumber").value;
-  secondInput = document.getElementById("secondNumber").value;
-  let result = parseFloat(firstInput) / parseFloat(secondInput);
   if (parseFloat(secondInput) === 0) {
-    result = "You can't divide by 0!";
+    return "You can't divide by 0!";
   }
-  alert(result);
-  return result;
+  return parseFloat(firstInput) / parseFloat(secondInput);
 }
 
 function equals() {
-  let resultAdd = add();
-  console.log("equals_Test");
-  console.log(`Add function:`,add());
-  let output = document.getElementById("displayResult");
-   output.innerHTML = resultAdd;
+  let secondInput = document.getElementById("secondNumber").value;
+  let result;
+  switch (currentOperation) {
+    case "+":
+      result = add(firstInput, secondInput);
+      break;
+    case "-":
+      result = subtract(firstInput, secondInput);
+      break;
+    case "*":
+      result = multiply(firstInput, secondInput);
+      break;
+    case "/":
+      result = divide(firstInput, secondInput);
+      break;
+    default:
+      result = "Keine Operation ausgewählt";
+  }
+  document.getElementById("displayResult").value = result;
 }
-
 function changeColor(element, color) {
   element.style.backgroundColor = color;
-  console.log("changeColortest");
 }
 
 function clearColor() {
@@ -47,10 +51,36 @@ function clearColor() {
   document.getElementById("Multiply").style.background = "#00008b";
   document.getElementById("Divide").style.background = "#00008b";
   document.getElementById("Equals").style.background = "#00008b";
-  console.log("clearColorTest");
 }
+
 function clear() {
   document.getElementById("firstNumber").value = "";
   document.getElementById("secondNumber").value = "";
   document.getElementById("displayResult").value = "";
+  firstInput = null;
+  currentOperation = null;
 }
+
+document.getElementById("Add").addEventListener("click", function() {
+  firstInput = document.getElementById("firstNumber").value;
+  currentOperation = "+";
+  changeColor(this, 'red');
+});
+
+document.getElementById("Subtract").addEventListener("click", function() {
+  firstInput = document.getElementById("firstNumber").value;
+  currentOperation = "-";
+  changeColor(this, 'red');
+});
+
+document.getElementById("Multiply").addEventListener("click", function() {
+  firstInput = document.getElementById("firstNumber").value;
+  currentOperation = "*";
+  changeColor(this, 'red');
+});
+
+document.getElementById("Divide").addEventListener("click", function() {
+  firstInput = document.getElementById("firstNumber").value;
+  currentOperation = "/";
+  changeColor(this, 'red');
+});
